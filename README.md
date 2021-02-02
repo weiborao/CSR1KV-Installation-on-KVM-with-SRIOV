@@ -1,4 +1,4 @@
-#Cisco CSR1000v KVM SRIOV Setting Guide on Ubuntu 20.04 With NetworkManager
+# Cisco CSR1000v KVM SRIOV Setting Guide on Ubuntu 20.04 With NetworkManager
 
 Last Update: February 2, 2021
 
@@ -8,8 +8,8 @@ Version:0.9
 
 
 This guide provides the steps on how to install CSR1000v/Catalyst 8000v on KVM, the setting of SRIOV and KVM tuning.
-#Ubuntu 20.04 Installation and Settings
-##(1) BIOS settings
+# Ubuntu 20.04 Installation and Settings
+## (1) BIOS settings
 
 | Configuration                        | Recommended Setting |
 | ------------------------------------ | ------------------- |
@@ -36,7 +36,7 @@ This guide provides the steps on how to install CSR1000v/Catalyst 8000v on KVM, 
 The above settings are from the Installation guide from [Cisco CSR 1000v and Cisco ISRv Software Configuration Guide](https://www.cisco.com/c/en/us/td/docs/routers/csr1000/software/configuration/b_CSR1000v_Configuration_Guide/b_CSR1000v_Configuration_Guide_chapter_0101.html#con_1313827).
 Note: some platform such as **Cisco NFVIS**, does not disable the Hyper-Threading.
 
-##(2) Ubuntu 20.04 installation tips
+## (2) Ubuntu 20.04 installation tips
 If you need the Gnome GUI, you can install the Ubuntu 20.04 Desktop.
 After the system bootup, **‘apparmor’** is recommended to be disabled, otherwise, you may meet **permission denied** when you assign SRIOV devices to the CSR1kV. You need to reboot to take effect.
 
@@ -77,7 +77,7 @@ ubuntu@ubuntu-kvm:~$ modinfo i40evf
 filename:       /lib/modules/5.4.0-62-generic/kernel/drivers/net/ethernet/intel/iavf/iavf.ko
 version:        3.2.3-k
 ```
-##(3) NIC Setting
+## (3) NIC Setting
 In Ubuntu 20.04, we use NetworkManager to config the NIC, you can use nmtui on the terminal, or nmcli.
 First, check the netplan.
 
@@ -324,7 +324,7 @@ ubuntu@ubuntu-kvm:~/kvm$ virsh net-dumpxml ens1f0_sriov_pool
 
 It is simple to add an SR-IOV NIC, as follow:
 
-<img src="/Users/werao/Desktop/pic1-sriov-pool.png" alt="pic1-sriov-pool" style="zoom:50%;" />
+<img src="pic1-sriov-pool.png" alt="pic1-sriov-pool" style="zoom:50%;" />
 
 This is equivalent to the following XML:
 
@@ -357,15 +357,15 @@ virsh dumpxml CSR1KV-1
 
 From the virt-manager, create a CSR1KV virtual machine step by step, and choose the virtual network interface from the SR-IOV pool.
 
- <img src="/Users/werao/Desktop/virt-manager step1.png" alt="virt-manager step1" style="zoom:50%;" />
+ <img src="virt-manager step1.png" alt="virt-manager step1" style="zoom:50%;" />
 
-<img src="/Users/werao/Desktop/virt-manager step2.png" alt="virt-manager step2" style="zoom:50%;" />
+<img src="virt-manager step2.png" alt="virt-manager step2" style="zoom:50%;" />
 
-<img src="/Users/werao/Desktop/virt-manager step2.2.png" alt="virt-manager step2.2" style="zoom:50%;" />
+<img src="virt-manager step2.2.png" alt="virt-manager step2.2" style="zoom:50%;" />
 
-<img src="/Users/werao/Desktop/virt-manager step3.png" alt="virt-manager step3" style="zoom:50%;" />
+<img src="virt-manager step3.png" alt="virt-manager step3" style="zoom:50%;" />
 
-<img src="/Users/werao/Desktop/virt-manager step4.png" alt="virt-manager step4" style="zoom:50%;" />
+<img src="virt-manager step4.png" alt="virt-manager step4" style="zoom:50%;" />
 
 Note: The first interface of csr1kv-1 is configured to **macvtap Bridge mode**, so you do not need to create a Linux bridge. However, csr1kv-1 can not communicate to the Linux host through this interface, but it can go out of the Linux host through the eno1. This is a known issue with macvtap.
 
@@ -914,7 +914,7 @@ A performance test was done after the SR-IOV setup, the CSR1KV was configured as
 | 1024Bytes   | 3731.26                  | 15500.00               |
 | 1400Bytes   | 4306.26                  | 18171.88               |
 
-<img src="/Users/werao/Desktop/line-chart.png" alt="line-chart" style="zoom:67%;" />
+<img src="line-chart.png" alt="line-chart" style="zoom:67%;" />
 
 Note: **These test results are not to represent the official performance data. Different servers and network cards may have different test results. The above data is for demo only.**
 
