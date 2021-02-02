@@ -355,7 +355,7 @@ ubuntu@ubuntu-kvm:~/kvm$ virsh net-dumpxml ens1f0_sriov_pool
 
 It is simple to add an SR-IOV NIC, as follow:
 
-<img src="/Users/werao/Desktop/pic1-sriov-pool.png" alt="pic1-sriov-pool" style="zoom:50%;" />
+<img src="pic1-sriov-pool.png" alt="pic1-sriov-pool" style="zoom:50%;" />
 
 This is equivalent to the following XML:
 
@@ -388,19 +388,19 @@ virsh dumpxml CSR1KV-1
 
 From the virt-manager, create a CSR1KV virtual machine step by step, and choose the virtual network interface from the SR-IOV pool.
 
- <img src="/Users/werao/Desktop/virt-manager step1.png" alt="virt-manager step1" style="zoom:50%;" />
+ <img src="virt-manager step1.png" alt="virt-manager step1" style="zoom:50%;" />
 
-<img src="/Users/werao/Desktop/virt-manager step2.png" alt="virt-manager step2" style="zoom:50%;" />
+<img src="virt-manager step2.png" alt="virt-manager step2" style="zoom:50%;" />
 
-<img src="/Users/werao/Desktop/virt-manager step2.2.png" alt="virt-manager step2.2" style="zoom:50%;" />
+<img src="virt-manager step2.2.png" alt="virt-manager step2.2" style="zoom:50%;" />
 
-<img src="/Users/werao/Desktop/virt-manager step3.png" alt="virt-manager step3" style="zoom:50%;" />
+<img src="virt-manager step3.png" alt="virt-manager step3" style="zoom:50%;" />
 
-<img src="/Users/werao/Desktop/virt-manager step4.png" alt="virt-manager step4" style="zoom:50%;" />
+<img src="virt-manager step4.png" alt="virt-manager step4" style="zoom:50%;" />
 
 Note: The first interface of csr1kv-1 is configured to **macvtap Bridge mode**, so you do not need to create a Linux bridge. However, csr1kv-1 can not communicate to the Linux host through this interface, but it can go out of the Linux host through the eno1. This is a known issue with macvtap.
 
-<img src="/Users/werao/Desktop/add-sriov-pool.png" alt="add-sriov-pool" style="zoom:50%;" />
+<img src="add-sriov-pool.png" alt="add-sriov-pool" style="zoom:50%;" />
 
 After select the Virtual Network Interface, click the **Begin Installation**, and you can shut down the virtual machine.
 The actions above will create the **csr1kv-1.xml** file under the directory: **/etc/libvirtd/qemu/**
@@ -945,7 +945,7 @@ A performance test was done after the SR-IOV setup, the CSR1KV was configured as
 | 1024Bytes   | 3731.26                  | 15500.00               |
 | 1400Bytes   | 4306.26                  | 18171.88               |
 
-<img src="/Users/werao/Desktop/line-chart.png" alt="line-chart" style="zoom:67%;" />
+<img src="line-chart.png" alt="line-chart" style="zoom:67%;" />
 
 Note: **These test results are not to represent the official performance data. Different servers and network cards may have different test results. The above data is for demo only.**
 
