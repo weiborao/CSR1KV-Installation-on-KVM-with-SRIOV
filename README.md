@@ -963,28 +963,16 @@ There is some notes in the Cisco CSR 1000v and Cisco ISRv Software Configuration
 
 # References
 
-https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/performance_tuning_guide/index
+<https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/performance_tuning_guide/index>
 
+<https://computingforgeeks.com/how-to-create-and-configure-bridge-networking-for-kvm-in-linux/>
 
+<https://software.intel.com/content/www/us/en/develop/articles/configure-sr-iov-network-virtual-functions-in-linux-kvm.html>
 
-https://computingforgeeks.com/how-to-create-and-configure-bridge-networking-for-kvm-in-linux/
+<https://linuxconfig.org/install-and-set-up-kvm-on-ubuntu-20-04-focal-fossa-linux>
 
+<https://kifarunix.com/how-to-fix-qemu-kvm-not-connected-error-on-ubuntu-20-04/>
 
-
-https://software.intel.com/content/www/us/en/develop/articles/configure-sr-iov-network-virtual-functions-in-linux-kvm.html
-
-
-
-https://linuxconfig.org/install-and-set-up-kvm-on-ubuntu-20-04-focal-fossa-linux
-
-
-
-https://kifarunix.com/how-to-fix-qemu-kvm-not-connected-error-on-ubuntu-20-04/
-
-
-
-https://linuxconfig.org/how-to-disable-apparmor-on-ubuntu-20-04-focal-fossa-linux
-
-
+<https://linuxconfig.org/how-to-disable-apparmor-on-ubuntu-20-04-focal-fossa-linux>
 
 **CSR1000v SD-WAN Installation on KVM** by Jean-Marc Barozet
