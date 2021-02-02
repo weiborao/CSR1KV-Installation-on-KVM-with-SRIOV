@@ -409,6 +409,7 @@ The actions above will create the **csr1kv-1.xml** file under the directory: **/
 # KVM Performance Tunning
 
 KVM performance tuning are related to NUMA, Memory Hugepage and vCPU pinning. The main reference is Redhat Linux 7 PERFORMANCE TUNING GUIDE
+
 We will use **virsh edit csr1kv-1** to do the performance tuning.
 
 ## (1) Check the capability of the platform
@@ -444,8 +445,6 @@ ubuntu@ubuntu-kvm:~$ virsh capabilities
 
 From the outputs, we can get the cores of CPU, the NUMA info and the hugepages.
 
-From the outputs, we can get the cores of CPU, the NUMA info and the hugepages.
-
 ## (2) NUMA Info
 
 ```shell
@@ -462,7 +461,6 @@ node   0   1
   0:  10  21
   1:  21  10 
 ```
-
 
 Two CPUs, each has 192GB memory, the NUMA node are node 0 and node 1.
 
@@ -483,8 +481,6 @@ ubuntu@ubuntu-kvm:~$ sudo udevadm info -ap /sys/class/net/ens1f0 | grep numa
     ATTRS{numa_node}=="0"
     ATTRS{numa_node}=="0"
 ```
-
-If the memory and NICs are all on numa_node 0, that would be more efficient. Please check the server’s PCI-E slots mapping with the CPU slots.
 
 If the memory and NICs are all on numa_node 0, that would be more efficient. Please check the server’s PCI-E slots mapping with the CPU slots.
 
@@ -562,7 +558,8 @@ Please pay attention to the following texts, other parameters might be different
 ```
 
 Please note that, if hyper-threading is enabled in BIOS setting, the parameter “emulatorpin” should be set, the cpuset are from the “virsh capabilities”, for example, siblings='1,45'. When the core 1 is pinned, core 45 should be set in emulatorpin.
-From the guide https://libvirt.org/formatdomain.html and https://libvirt.org/kbase/kvm-realtime.html we set the CPU and memory tuning parameters as the highlighted text.
+
+From the guide <https://libvirt.org/formatdomain.html> and <https://libvirt.org/kbase/kvm-realtime.html> we set the CPU and memory tuning parameters as the highlighted text.
 
 ```xml
 <domain type='kvm'>
@@ -917,15 +914,16 @@ show sdwan omp routes
 ## (3) CSR 1000v Smart License Registration
 
 Before Smart License registration, you need ：
-1、 CSR 1000v’s control connections are up；
-2、 Configure ip http client source-interface GigabitEthernet2
-3、 If the version is 16.12.x and bellow, you need to allow service all
-sdwan interface GigabitEthernet2 tunnel-interface allow-service all 
-In the 17.2.x and above versions, there is an allow-service https
-4、 CSR 1000v can access URL：https://tools.cisco.com/its/service/oddce/services/DDCEService
-The command license smart register idtoken xxxxxx will do the registration.
-You can find the idtoken from your Smart Account smart license inventory.
-show license status to check the status.
+1. CSR 1000v’s control connections are up；
+2. Configure ip http client source-interface GigabitEthernet2
+3. If the version is 16.12.x and bellow, you need to allow service all
+   `sdwan interface GigabitEthernet2 tunnel-interface allow-service all `
+   In the 17.2.x and above versions, there is an allow-service https
+4. CSR 1000v can access URL：https://tools.cisco.com/its/service/oddce/services/DDCEService
+   The command license smart register idtoken xxxxxx will do the registration.
+   You can find the idtoken from your Smart Account smart license inventory.
+   show license status to check the status.
+
 
 ```
 CSR1000v-1#show platform hardware throughput level
