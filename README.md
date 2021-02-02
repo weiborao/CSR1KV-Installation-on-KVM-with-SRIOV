@@ -324,7 +324,7 @@ ubuntu@ubuntu-kvm:~/kvm$ virsh net-dumpxml ens1f0_sriov_pool
 
 It is simple to add an SR-IOV NIC, as follow:
 
-<img src="pic1-sriov-pool.png" alt="pic1-sriov-pool" style="zoom:50%;" />
+<img src="pic1-sriov-pool.png" alt="pic1-sriov-pool" style="zoom:33%;" />
 
 This is equivalent to the following XML:
 
@@ -357,15 +357,15 @@ virsh dumpxml CSR1KV-1
 
 From the virt-manager, create a CSR1KV virtual machine step by step, and choose the virtual network interface from the SR-IOV pool.
 
- <img src="virt-manager step1.png" alt="virt-manager step1" style="zoom:50%;" />
+ <img src="virt-manager step1.png" alt="virt-manager step1" style="zoom:33%;" />
 
-<img src="virt-manager step2.png" alt="virt-manager step2" style="zoom:50%;" />
+<img src="virt-manager step2.png" alt="virt-manager step2" style="zoom:33%;" />
 
-<img src="virt-manager step2.2.png" alt="virt-manager step2.2" style="zoom:50%;" />
+<img src="virt-manager step2.2.png" alt="virt-manager step2.2" style="zoom:33%;" />
 
-<img src="virt-manager step3.png" alt="virt-manager step3" style="zoom:50%;" />
+<img src="virt-manager step3.png" alt="virt-manager step3" style="zoom:33%;" />
 
-<img src="virt-manager step4.png" alt="virt-manager step4" style="zoom:50%;" />
+<img src="virt-manager step4.png" alt="virt-manager step4" style="zoom:33%;" />
 
 Note: The first interface of csr1kv-1 is configured to **macvtap Bridge mode**, so you do not need to create a Linux bridge. However, csr1kv-1 can not communicate to the Linux host through this interface, but it can go out of the Linux host through the eno1. This is a known issue with macvtap.
 
