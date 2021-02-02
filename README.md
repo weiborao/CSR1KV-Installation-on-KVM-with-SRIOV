@@ -958,6 +958,7 @@ There is some notes in the Cisco CSR 1000v and Cisco ISRv Software Configuration
 
 > SR-IOV (ixgbevf)
 > Maximum VLANs: The maximum number of VLANs supported on PF is 64. Together, all VFs can have a total of 64 VLANs. (Intel limitation.)
+>
 > SR-IOV (i40evf)
 > Maximum VLANs: The maximum number of VLANs supported on PF is 512. Together, all VFs can have a total of 512 VLANs. (Intel limitation.) Per-VF resources are managed by the PF (host) device driver.
 
