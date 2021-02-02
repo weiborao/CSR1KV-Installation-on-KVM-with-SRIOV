@@ -8,6 +8,11 @@ Version:0.9
 
 
 This guide provides the steps on how to install CSR1000v/Catalyst 8000v on KVM, the setting of SRIOV and KVM tuning.
+
+[TOC]
+
+
+
 # Ubuntu 20.04 Installation and Settings
 ## (1) BIOS settings
 
@@ -324,7 +329,7 @@ ubuntu@ubuntu-kvm:~/kvm$ virsh net-dumpxml ens1f0_sriov_pool
 
 It is simple to add an SR-IOV NIC, as follow:
 
-<img src="pic1-sriov-pool.png" alt="pic1-sriov-pool" style="zoom:33%;" />
+<img src="/Users/werao/Desktop/pic1-sriov-pool.png" alt="pic1-sriov-pool" style="zoom:50%;" />
 
 This is equivalent to the following XML:
 
@@ -357,15 +362,15 @@ virsh dumpxml CSR1KV-1
 
 From the virt-manager, create a CSR1KV virtual machine step by step, and choose the virtual network interface from the SR-IOV pool.
 
- <img src="virt-manager step1.png" alt="virt-manager step1" style="zoom:33%;" />
+ <img src="/Users/werao/Desktop/virt-manager step1.png" alt="virt-manager step1" style="zoom:50%;" />
 
-<img src="virt-manager step2.png" alt="virt-manager step2" style="zoom:33%;" />
+<img src="/Users/werao/Desktop/virt-manager step2.png" alt="virt-manager step2" style="zoom:50%;" />
 
-<img src="virt-manager step2.2.png" alt="virt-manager step2.2" style="zoom:33%;" />
+<img src="/Users/werao/Desktop/virt-manager step2.2.png" alt="virt-manager step2.2" style="zoom:50%;" />
 
-<img src="virt-manager step3.png" alt="virt-manager step3" style="zoom:33%;" />
+<img src="/Users/werao/Desktop/virt-manager step3.png" alt="virt-manager step3" style="zoom:50%;" />
 
-<img src="virt-manager step4.png" alt="virt-manager step4" style="zoom:33%;" />
+<img src="/Users/werao/Desktop/virt-manager step4.png" alt="virt-manager step4" style="zoom:50%;" />
 
 Note: The first interface of csr1kv-1 is configured to **macvtap Bridge mode**, so you do not need to create a Linux bridge. However, csr1kv-1 can not communicate to the Linux host through this interface, but it can go out of the Linux host through the eno1. This is a known issue with macvtap.
 
@@ -914,7 +919,7 @@ A performance test was done after the SR-IOV setup, the CSR1KV was configured as
 | 1024Bytes   | 3731.26                  | 15500.00               |
 | 1400Bytes   | 4306.26                  | 18171.88               |
 
-<img src="line-chart.png" alt="line-chart" style="zoom:67%;" />
+<img src="/Users/werao/Desktop/line-chart.png" alt="line-chart" style="zoom:67%;" />
 
 Note: **These test results are not to represent the official performance data. Different servers and network cards may have different test results. The above data is for demo only.**
 
