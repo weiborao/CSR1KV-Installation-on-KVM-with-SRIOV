@@ -1,0 +1,7 @@
+<network>
+   <name>ens1f0_sriov_pool</name> <!-- This is the name of the file you created -->
+   <forward mode='hostdev' managed='yes'>
+     <pf dev='ens1f0'/>  <!-- Use the netdev name of your SR-IOV devices PF here -->
+   </forward>
+</network>
+
