@@ -9,9 +9,35 @@ Version:0.9
 
 This guide provides the steps on how to install CSR1000v/Catalyst 8000v on KVM, the setting of SRIOV and KVM tuning.
 
-[TOC]
-
-
+- [Ubuntu 20.04 Installation and Settings](#ubuntu-2004-installation-and-settings)
+  * [(1) BIOS settings](#-1--bios-settings)
+  * [(2) Ubuntu 20.04 installation tips](#-2--ubuntu-2004-installation-tips)
+  * [(3) NIC Setting](#-3--nic-setting)
+- [SR-IOV Configuration](#sr-iov-configuration)
+  * [(1) Check the NIC to support SR-IOV](#-1--check-the-nic-to-support-sr-iov)
+  * [(2) Change the GRUB parameters](#-2--change-the-grub-parameters)
+  * [(3) VFs Persistence](#-3--vfs-persistence)
+  * [(4) Check the VFs](#-4--check-the-vfs)
+- [Create SR-IOV Virtual Network Adapter Pool](#create-sr-iov-virtual-network-adapter-pool)
+  * [(1) Create an xml file](#-1--create-an-xml-file)
+  * [(2) Define a network and set to auto start.](#-2--define-a-network-and-set-to-auto-start)
+  * [(3) Select the virtual adapter from the pool](#-3--select-the-virtual-adapter-from-the-pool)
+- [Create the CSR1KV VM from virt-manager](#create-the-csr1kv-vm-from-virt-manager)
+- [KVM Performance Tunning](#kvm-performance-tunning)
+  * [(1) Check the capability of the platform](#-1--check-the-capability-of-the-platform)
+  * [(2) NUMA Info](#-2--numa-info)
+  * [(3) HugePage and Transparent Hugepage](#-3--hugepage-and-transparent-hugepage)
+  * [(4) vCPU Pinning](#-4--vcpu-pinning)
+  * [(5) Edit the XML file of the CSR1KV](#-5--edit-the-xml-file-of-the-csr1kv)
+  * [(6) Check CSR1000v’s tunning](#-6--check-csr1000v-s-tunning)
+  * [(7) Check the vNIC in CSR1KV](#-7--check-the-vnic-in-csr1kv)
+  * [(1) CSR 1000v initial config example](#-1--csr-1000v-initial-config-example)
+  * [(2) Commands to check the status](#-2--commands-to-check-the-status)
+  * [(3) CSR 1000v Smart License Registration](#-3--csr-1000v-smart-license-registration)
+- [Performances and limitations](#performances-and-limitations)
+  * [(1) The performance of the SR-IOV](#-1--the-performance-of-the-sr-iov)
+  * [(2) The limitation of the SR-IOV](#-2--the-limitation-of-the-sr-iov)
+- [References](#references)
 
 # Ubuntu 20.04 Installation and Settings
 ## (1) BIOS settings
