@@ -31,6 +31,7 @@ This guide provides the steps on how to install CSR1000v/Catalyst 8000v on KVM, 
   * [(5) Edit the XML file of the CSR1KV](#-5--edit-the-xml-file-of-the-csr1kv)
   * [(6) Check CSR1000v’s tunning](#-6--check-csr1000v-s-tunning)
   * [(7) Check the vNIC in CSR1KV](#-7--check-the-vnic-in-csr1kv)
+- [CSR 1000v initial configuration and Smart License registration](#csr-1000v-initial-configuration-and-smart-license-registration)
   * [(1) CSR 1000v initial config example](#-1--csr-1000v-initial-config-example)
   * [(2) Commands to check the status](#-2--commands-to-check-the-status)
   * [(3) CSR 1000v Smart License Registration](#-3--csr-1000v-smart-license-registration)
@@ -850,7 +851,7 @@ csr1kv-1#show platform software vnic-if interface-mapping
 
 The Driver Name net_i40e_vf indicates that the vNIC is a VF from the SR-IOV pool.
 
-CSR 1000v initial configuration and Smart License registration
+# CSR 1000v initial configuration and Smart License registration
 
 ## (1) CSR 1000v initial config example
 
